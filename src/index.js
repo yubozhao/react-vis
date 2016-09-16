@@ -25,10 +25,6 @@ import document from 'global/document';
 import POPULATION from './data/population';
 import DENSITY from './data/population-density';
 
-import RV from 'react-vis';
-
-const data = [];
-
 const app = (
   <main>
     <h1>Your react-vis example</h1>
