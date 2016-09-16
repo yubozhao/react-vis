@@ -18,42 +18,33 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-export {default as Table} from './lib/table/table';
-export {default as Treemap} from './lib/treemap/treemap';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import document from 'global/document';
 
-export {default as XYPlot} from './lib/plot/xy-plot';
+import POPULATION from './data/population';
+import DENSITY from './data/population-density';
 
-export {default as LineSeries} from './lib/plot/series/line-series';
-export {default as VerticalBarSeries}
-  from './lib/plot/series/vertical-bar-series';
-export {default as HorizontalBarSeries}
-  from './lib/plot/series/horizontal-bar-series';
-export {default as MarkSeries} from './lib/plot/series/mark-series';
-export {default as HeatmapSeries} from './lib/plot/series/heatmap-series';
-export {default as AreaSeries} from './lib/plot/series/area-series';
-export {default as LineMarkSeries} from './lib/plot/series/line-mark-series';
+import RV from 'react-vis';
 
-export {default as Hint} from './lib/plot/hint';
-export {default as Crosshair} from './lib/plot/crosshair';
+const data = [];
 
-export {default as XAxis} from './lib/plot/axis/x-axis';
-export {default as YAxis} from './lib/plot/axis/y-axis';
+const app = (
+  <main>
+    <h1>Your react-vis example</h1>
+    <h3>Population data</h3>
+    <div className="data-wrap">
+      <p className="data">{JSON.stringify(POPULATION)}</p>
+    </div>
 
-export {default as VerticalGridLines} from './lib/plot/vertical-grid-lines';
-export {default as HorizontalGridLines} from './lib/plot/horizontal-grid-lines';
+    <h3>Density data</h3>
+    <div className="data-wrap">
+      <p className="data">{JSON.stringify(DENSITY)}</p>
+    </div>
+  </main>
+);
 
-export {default as RadialChart} from './lib/radial-chart/radial-chart';
-
-export {default as DiscreteColorLegend}
-  from './lib/legends/discrete-color-legend';
-
-export {default as SearchableDiscreteColorLegend}
-  from './lib/legends/searchable-discrete-color-legend';
-
-export {default as ContinuousColorLegend}
-  from './lib/legends/continuous-color-legend';
-
-export {default as ContinuousSizeLegend}
-  from './lib/legends/continuous-size-legend';
-
-export {default as makeWidthFlexible} from './lib/make-vis-flexible';
+// Adding new element instead.
+const el = document.createElement('div');
+document.body.appendChild(el);
+ReactDOM.render(app, el);
